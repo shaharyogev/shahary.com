@@ -1,0 +1,92 @@
+
+:root{
+  --tc:white;
+  --tb:black;
+  --te:white;
+  
+}
+
+body{
+  background:var(--tb);
+}
+#menuPopUp {
+  position: absolute;
+  right:90%;
+  bottom:90%;
+  border-radius:10px;
+
+
+}
+
+.manuBox1,
+.manuBox2,
+.manuBox3,
+.manuBox4 {
+  display:none;
+ 
+
+
+}
+
+.change .manuBox1, 
+.change .manuBox2,
+.change .manuBox3,
+.change .manuBox4 {
+  display:block;
+  width: 130px;
+  padding:10px;
+  background-color: rgba(177, 211, 177, 0.479);
+  text-align:center;
+  margin:auto;
+  border: 1px solid var(--tc); 
+}
+
+.menuButtonText{
+  color:var(--tc);
+  text-decoration:none;
+  
+}
+
+
+#menuLogo {
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+  border: 6px solid var(--tc);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 12px;
+
+ 
+
+}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: var(--tc);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
