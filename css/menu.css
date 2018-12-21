@@ -1,50 +1,71 @@
+:root {
+  --tc: white;
+  --tb: black;
+  --te: white;
 
-:root{
-  --tc:white;
-  --tb:black;
-  --te:white;
-  
 }
 
-body{
-  background:var(--tb);
+body {
+  background: var(--tb);
 }
+
 #menuPopUp {
   position: absolute;
-  right:90%;
-  bottom:90%;
-  border-radius:10px;
-
+  right: 100%;
+  bottom: 100%;
+  border-radius: 10px;
+  
 
 }
 
 .manuBox1,
 .manuBox2,
 .manuBox3,
-.manuBox4 {
-  display:none;
- 
-
+.manuBox4,
+.manuBox5 {
+  display: none;
+  z-index: 1;
+  width: 130px;
+  padding: 10px;
+  background-color: rgba(96, 245, 245, 0.794);
+  text-align: center;
+  margin: auto;
+  border-bottom: 2px solid var(--tc);
+  /*box-shadow: 7px 6px 47px -10px rgba(255, 255, 255, 0.85);*/
+}
+.manuBox1{
+  border-radius:6px 6px 0 0;
+}
+.manuBox5{
+  border-radius: 0 0 6px 6px;
+  border-bottom: 0px solid var(--tc);
 
 }
 
-.change .manuBox1, 
+.change .manuBox1,
 .change .manuBox2,
 .change .manuBox3,
-.change .manuBox4 {
-  display:block;
+.change .manuBox4,
+.change .manuBox5 {
+  display: block;
+
+/*
+  z-index: 1;
+  display: block;
   width: 130px;
-  padding:10px;
-  background-color: rgba(177, 211, 177, 0.479);
-  text-align:center;
-  margin:auto;
-  border: 1px solid var(--tc); 
+  padding: 10px;
+  background-color: rgba(96, 245, 245, 0.794);
+  text-align: center;
+  margin: auto;
+  border: 1px transparent var(--tc);
+  box-shadow: 7px 6px 47px -10px rgba(0, 0, 0, 0.85);
+  */
 }
 
-.menuButtonText{
-  color:var(--tc);
-  text-decoration:none;
-  
+.menuButtonText {
+  color: var(--tc);
+  text-decoration: none;
+
 }
 
 
@@ -58,11 +79,9 @@ body{
   height: 35px;
   padding: 12px;
 
- 
-
 }
 
-.container {
+.menuContainer {
   display: inline-block;
   cursor: pointer;
 }

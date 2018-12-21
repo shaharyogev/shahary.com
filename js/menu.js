@@ -1,6 +1,8 @@
 
 let menuOpen = 0;
 let menuClass;
+const style = document.documentElement.style;
+
 
 document.body.addEventListener("click", menuXX);
 
@@ -20,7 +22,12 @@ function menuXX(){
   };
 }
 
+function themeToggle(id, value){
+  let rootColors =[{tc: 'white', tb:'black', te:'white'}] ;
+
+  
+  style.setProperty('--' + id, value);
+}
 
 
-const style = document.documentElement.style;
 
