@@ -74,10 +74,9 @@ body {
   right: 5%;
   bottom: 3%;
   border: 6px solid var(--tc);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  padding: 12px;
+  border-radius: 30%;
+ 
+  padding: 9px 12px 3px 12px;
 
 }
 
@@ -86,9 +85,9 @@ body {
   cursor: pointer;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.menuBar1,
+.menuBar2,
+.menuBar3 {
   width: 35px;
   height: 5px;
   background-color: var(--tc);
@@ -96,16 +95,16 @@ body {
   transition: 0.4s;
 }
 
-.change .bar1 {
+.change .menuBar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {
+.change .menuBar2 {
   opacity: 0;
 }
 
-.change .bar3 {
+.change .menuBar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }

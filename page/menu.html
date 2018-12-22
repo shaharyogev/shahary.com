@@ -1,40 +1,25 @@
-<!DOCTYPE html>
-<html lang='en'>
+<div id='menuLogo'>
+  <div class="menuContainer" onclick="menuX(this)">
+    <div class="menuBar1"></div>
+    <div class="menuBar2"></div>
+    <div class="menuBar3"></div>
 
-<head>
-  <link rel='stylesheet' type='text/css' href='../css/menu.css'>
-  <meta http-equiv='refresh' content='120' />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-
-<body>
-  <section id='menuLogo'>
-    <div class="menuContainer" onclick="menuX(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-
-      <div id='menuPopUp'>
-        <a href='../index.html#about_me' class='menuButtonText'>
-          <div class='manuBox1'>About me</div>
-        </a>
-        <a href='../page/blog.html' class='menuButtonText'>
-          <div class='manuBox2'>Technologies</div>
-        </a>
-        <a href='../page/coding.html' class='menuButtonText'>
-          <div class='manuBox3'>Coding projects</div>
-        </a>
-        <a href='../index.html#contact_me' class='menuButtonText'>
-          <div class='manuBox4'>Contact me</div>
-        </a>
-        <a href='#'  class='menuButtonText' onclick="themeToggle('themeToggle')">
-          <div id = 'themeToggle' class='manuBox5'>Dark-Side</div>
-        </a>
-      </div>
+    <div id='menuPopUp'>
+      <a href='../index.html#about_me' class='menuButtonText'>
+        <div class='manuBox1'>About me</div>
+      </a>
+      <a href='../page/blog.html' class='menuButtonText'>
+        <div class='manuBox2'>Technologies</div>
+      </a>
+      <a href='../page/coding.html' class='menuButtonText'>
+        <div class='manuBox3'>Coding projects</div>
+      </a>
+      <a href='../index.html#contact_me' class='menuButtonText'>
+        <div class='manuBox4'>Contact me</div>
+      </a>
+      <a href='#' class='menuButtonText' onclick="themeToggle('themeToggle')">
+        <div id='themeToggle' class='manuBox5'>Dark-Side</div>
+      </a>
     </div>
-  </section>
-</body>
-<script src='../js/menu.js'></script>
-
-</html>
+  </div>
+</div>

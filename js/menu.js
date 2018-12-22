@@ -3,7 +3,6 @@ let menuOpen = 0;
 let menuClass;
 const style = document.documentElement.style;
 
-document.body.addEventListener("click", menuXX);
 
 function menuX(x, st) {
   x.classList.toggle("change");
@@ -54,6 +53,8 @@ function themeToggle(id){
     document.getElementById(id).innerText = 'Dark-Side';
   }
 }
+document.body.addEventListener("click", menuXX);
+
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
