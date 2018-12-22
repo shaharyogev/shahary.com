@@ -22,12 +22,28 @@ function menuXX(){
   };
 }
 
-function themeToggle(id, value){
-  let rootColors =[{tc: 'white', tb:'black', te:'white'}] ;
-
+function themeToggle(light,dark){
+  let rootColors = [
+    {tc: light}
+  , 
+    {tb: dark}
+  , 
+    {te: light}
+  ];
+  for(index in rootColors){
+    
+    let id = Object.getOwnPropertyNames(rootColors[index]);
+    console.log(Object.getOwnPropertyNames(rootColors[index]));
+    let value = Object.values(rootColors[index]);
+    console.log(Object.values(rootColors[index]));
+    style.setProperty('--' + id, value);
+    console.log(rootColors[index]);
+  }
   
-  style.setProperty('--' + id, value);
-}
+  
+  }
+themeToggle('black','white')
+//themeToggle('white','black')
 
 
 
