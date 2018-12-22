@@ -1,10 +1,10 @@
 :root {
-  /*--tc: black;/*theme color*/
-  /*--tb: white;/*theme background*/
-  /*--te: black;/*theme emlemnts color*/
-  --tc: white;
+  --tc: black;/*theme color*/
+  --tb: white;/*theme background*/
+  --te: black;/*theme emlemnts color*/
+  /*--tc: white;
   --tb: black;
-  --te: white;
+  --te: white;*/
   --sh: 736px;
   --sw: 100%;
   --pba:rgba(255, 255, 255, 0.294);
