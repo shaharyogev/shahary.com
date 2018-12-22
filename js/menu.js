@@ -57,7 +57,7 @@ document.body.addEventListener("click", menuXX);
 
 
 function includeHTML() {
-  var z, i, elmnt, file, xhttp;
+  var z, i, elmnt, file, xhttp,response;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
@@ -83,6 +83,42 @@ function includeHTML() {
     }
   }
 };
+
+
+function urlBack(){
+  let req = window.location.href;
+  let end = req.length;
+  let base = window.location.origin;
+  console.log(base);
+  req = req.slice(base.length, end);
+  location.assign(base)
+  return req;
+};
+
+
+function includeThisHTML(page) {
+  var z, i, elmnt, file, xhttp;
+    elmnt = document.getElementById("main");
+    file = page;
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      z = {foo:'bar'};
+      history.pushState(z, page, page);
+      /*exit the function:*/
+      return;
+    }
+};
+
 
 
 
