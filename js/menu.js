@@ -85,20 +85,11 @@ function includeHTML() {
 };
 
 
-function urlBack(){
-  let req = window.location.href;
-  let end = req.length;
-  let base = window.location.origin;
-  console.log(base);
-  req = req.slice(base.length, end);
-  location.assign(base)
-  return req;
-};
 
 
 function includeThisHTML(page) {
   var z, i, elmnt, file, xhttp;
-    elmnt = document.getElementById("main");
+    elmnt = document.getElementById("dynamicContent");
     file = page;
     if (file) {
       /*make an HTTP request using the attribute value as the file name:*/
@@ -112,13 +103,29 @@ function includeThisHTML(page) {
       }      
       xhttp.open("GET", file, true);
       xhttp.send();
-      z = {foo:'bar'};
+      z = {indexnew:page};
       history.pushState(z, page, page);
       /*exit the function:*/
       return;
     }
 };
 
+
+function urlBack(){
+  let req = window.location.href;
+  let end = req.length;
+  let base = window.location.origin;
+  //console.log(base);
+  req = req.slice(base.length, end);
+  console.log(req)
+  //location.assign(base)
+  return req;
+};
+
+window.onpopstate = function(event) {
+  includeThisHTML(urlBack())
+  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+};
 
 
 
