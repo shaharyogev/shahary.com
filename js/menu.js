@@ -2,6 +2,7 @@
 let menuOpen = 0;
 let menuClass;
 const style = document.documentElement.style;
+const homePageDynamicContent = '../page/coding-projects.html'
 
 
 function menuX(x, st) {
@@ -78,6 +79,9 @@ function includeHTML() {
       }      
       xhttp.open("GET", file, true);
       xhttp.send();
+      //var homePage = {index:'indexnew.html'};
+      //history.pushState(homePage, 'indexnew.html', 'indexnew.html');
+
       /*exit the function:*/
       return;
     }
@@ -103,29 +107,36 @@ function includeThisHTML(page) {
       }      
       xhttp.open("GET", file, true);
       xhttp.send();
-      z = {indexnew:page};
-      history.pushState(z, page, page);
+      z = {shahary:page};
+      history.pushState(z, '?' + page, '?' + page);
       /*exit the function:*/
       return;
     }
 };
 
 
-function urlBack(){
-  let req = window.location.href;
-  let end = req.length;
-  let base = window.location.origin;
-  //console.log(base);
-  req = req.slice(base.length, end);
-  console.log(req)
-  //location.assign(base)
-  return req;
-};
-
 window.onpopstate = function(event) {
-  includeThisHTML(urlBack())
-  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  if(window.location.pathname !== '/'){
+  includeThisHTML(window.location.search)
+  //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  }else{
+    includeThisHTML(homePageDynamicContent)
+  }
 };
+/*
+window.onload =function(event) {
+  if(window.location.pathname !== '/'){
 
-
-
+  includeThisHTML(window.location.pathname)
+}else{
+  includeThisHTML(window.location.search)
+}
+};*/
+/*
+window.onload = function(event) {
+  if(window.location.search !== ""){
+    let newPage = window.location.search
+    includeThisHTML(newPage)
+    };
+  };
+*/
