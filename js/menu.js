@@ -1,26 +1,41 @@
-
 let menuOpen = 0;
 let menuClass;
 let renderFinished = 0;
 const style = document.documentElement.style;
-const homePageDynamicContent = '../page/coding-projects.html'
+const homePageDynamicContent = '/page/coding-projects.html'
 
+function searchPath(){
+  if (window.location.search !== "") {
+    let newPage = window.location.search;
+    let newPageLen = newPage.length;
+    newPage = newPage.slice(1, newPageLen)
+    elmnt = document.getElementById("dynamicContent");
+    elmnt.innerHTML = '<div include-html="' + newPage + '" ></div>'
+    console.log('searchPath active' )
+  };
+}
 
 function menuX(x, st) {
   x.classList.toggle("change");
   menuClass = x;
-  if(menuOpen === 0 ){
-    st = setTimeout(function(){menuOpen = 1;}, 200);
-  }else{
+  if (menuOpen === 0) {
+    st = setTimeout(function () {
+      menuOpen = 1;
+    }, 200);
+  } else {
     menuOpen = 0;
   }
 }
 
-function menuXX(){
-  if(menuOpen === 1 ){
+
+//close the menu if the user click enyware else
+function menuXX() {
+  if (menuOpen === 1) {
     menuX(menuClass);
   };
 }
+
+
 
 function themeColors(light, dark) {
   let rootColors = [{
@@ -34,32 +49,39 @@ function themeColors(light, dark) {
     }
   ];
   for (index in rootColors) {
-
     let id = Object.getOwnPropertyNames(rootColors[index]);
-    //console.log(Object.getOwnPropertyNames(rootColors[index]));
     let value = Object.values(rootColors[index]);
-    //console.log(Object.values(rootColors[index]));
     style.setProperty('--' + id, value);
-    //console.log(rootColors[index]);
   }
 }
 
-function themeToggle(id){
+
+
+function themeToggle(id) {
   let themeStateText = document.getElementById(id).innerText
   //console.log(themeStateText)
-  if(themeStateText == 'Dark-Side'){
-    themeColors('white','black');
+  if (themeStateText == 'Dark-Side') {
+    themeColors('white', 'black');
     document.getElementById(id).innerText = 'Light-Side';
-  }else{
-    themeColors('black','white');
+  } else {
+    themeColors('black', 'white');
     document.getElementById(id).innerText = 'Dark-Side';
   }
 }
 document.body.addEventListener("click", menuXX);
 
 
+
+function tests() {
+  renderFinished = 1;
+  console.log('renderFinished: ' + renderFinished);
+}
+
+
+
 function includeHTML() {
-  var z, i, elmnt, file, xhttp,response;
+  document.getElementById("dynamicContent").addEventListener("load", tests());
+  var z, i, elmnt, file, xhttp, response;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
@@ -69,67 +91,83 @@ function includeHTML() {
     if (file) {
       /*make an HTTP request using the attribute value as the file name:*/
       xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
+      xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found."; //DEV
+            //includeThisHTML(homePageDynamicContent)//PRODUCTION
+          }
           /*remove the attribute, and call this function once more:*/
           elmnt.removeAttribute("include-html");
           includeHTML();
         }
-      }      
+      }
       xhttp.open("GET", file, true);
-      xhttp.send();    
+      xhttp.send();
       /*exit the function:*/
       return;
     }
   }
-  renderFinished = 1;
-  console.log('renderFinished' + renderFinished);
 };
+
 
 
 function includeThisHTML(page) {
   var z, i, elmnt, file, xhttp;
-    elmnt = document.getElementById("dynamicContent");
-    file = page;
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
+  elmnt = document.getElementById("dynamicContent");
+  file = page;
+  if (file) {
+    /*make an HTTP request using the attribute value as the file name:*/
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          elmnt.innerHTML = this.responseText;
         }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      z = {shahary:page};
-      history.pushState(z, '?' + page, '?' + page);
-      /*exit the function:*/
-      return;
+        if (this.status == 404) {
+          elmnt.innerHTML = "Page not found."; //DEV
+          //includeThisHTML(homePageDynamicContent)//PRODUCTION
+        }
+        /*remove the attribute, and call this function once more:*/
+      }
     }
-};
-
-
-window.onpopstate = function(event) {
-  if(window.location.pathname !== '/'){
-  includeThisHTML(window.location.search)
-  //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-  }else{
-    includeThisHTML(homePageDynamicContent)
+    xhttp.open("GET", file, true);
+    xhttp.send();
+    z = {
+      shahary: page
+    };
+    history.pushState(z, '?' + page, '?' + page);
+    /*exit the function:*/
+    return;
   }
 };
 
 
-window.onload = function(event) {
-  if(window.location.search !== "" && renderFinished === 1){
+
+window.onpopstate = function (event) {
+  if (window.location.pathname !== '/') {
+    includeThisHTML(window.location.search)
+    //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  } else {
+    includeThisHTML(homePageDynamicContent)
+  }
+};
+
+/*
+window.onload = function (event) {
+  if (window.location.search !== "" && renderFinished === 1) {
     let newPage = window.location.search;
     let newPageLen = newPage.length;
-    newPage = newPage.slice(1,newPageLen)
+    newPage = newPage.slice(1, newPageLen)
     includeThisHTML(newPage);
   };
 };
 
+*/
 
+function reloadFromServer() {
+  location.reload(true);
+}
