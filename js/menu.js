@@ -14,6 +14,7 @@ function searchPath(){
   };
 }
 
+//menu X/E 
 function menuX(x, st) {
   x.classList.toggle("change");
   menuClass = x;
@@ -34,7 +35,15 @@ function menuXX() {
   };
 }
 
-
+function screenResize(){
+  let height = window.innerHeight;
+  let width = window.innerWidth;
+  console.log(height + width);
+  style.setProperty('--sh', height + 'px');
+  style.setProperty('--sw', width + 'px');
+};
+screenResize()
+window.addEventListener("resize", screenResize)
 
 function themeColors(light, dark) {
   let rootColors = [{
