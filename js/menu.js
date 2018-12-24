@@ -11,7 +11,6 @@ function searchPath(){
     newPage = newPage.slice(1, newPageLen)
     elmnt = document.getElementById("dynamicContent");
     elmnt.innerHTML = '<div include-html="' + newPage + '" ></div>'
-    console.log('searchPath active' )
   };
 }
 
@@ -28,7 +27,7 @@ function menuX(x, st) {
 }
 
 
-//close the menu if the user click enyware else
+//close the menu if the user click anywhere else
 function menuXX() {
   if (menuOpen === 1) {
     menuX(menuClass);
@@ -48,7 +47,7 @@ function themeColors(light, dark) {
       te: light
     }
   ];
-  for (index in rootColors) {
+    for (index in rootColors) {
     let id = Object.getOwnPropertyNames(rootColors[index]);
     let value = Object.values(rootColors[index]);
     style.setProperty('--' + id, value);
@@ -58,14 +57,17 @@ function themeColors(light, dark) {
 
 
 function themeToggle(id) {
-  let themeStateText = document.getElementById(id).innerText
+  let themeStateText = document.getElementById(id).innerText;
+  let logoSrc = document.getElementById("logo");
   //console.log(themeStateText)
   if (themeStateText == 'Dark-Side') {
     themeColors('white', 'black');
     document.getElementById(id).innerText = 'Light-Side';
+    logoSrc.src = "../files/image/shahar_yogev_logo2.png";
   } else {
     themeColors('black', 'white');
     document.getElementById(id).innerText = 'Dark-Side';
+    logoSrc.src = "../files/image/shahar_yogev_logo1.png";
   }
 }
 document.body.addEventListener("click", menuXX);
