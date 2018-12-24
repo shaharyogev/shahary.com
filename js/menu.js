@@ -1,6 +1,7 @@
 
 let menuOpen = 0;
 let menuClass;
+let renderFinished = 0;
 const style = document.documentElement.style;
 const homePageDynamicContent = '../page/coding-projects.html'
 
@@ -78,17 +79,14 @@ function includeHTML() {
         }
       }      
       xhttp.open("GET", file, true);
-      xhttp.send();
-      //var homePage = {index:'indexnew.html'};
-      //history.pushState(homePage, 'indexnew.html', 'indexnew.html');
-
+      xhttp.send();    
       /*exit the function:*/
       return;
     }
   }
+  renderFinished = 1;
+  console.log('renderFinished' + renderFinished);
 };
-
-
 
 
 function includeThisHTML(page) {
@@ -123,20 +121,15 @@ window.onpopstate = function(event) {
     includeThisHTML(homePageDynamicContent)
   }
 };
-/*
-window.onload =function(event) {
-  if(window.location.pathname !== '/'){
 
-  includeThisHTML(window.location.pathname)
-}else{
-  includeThisHTML(window.location.search)
-}
-};*/
-/*
+
 window.onload = function(event) {
-  if(window.location.search !== ""){
-    let newPage = window.location.search
-    includeThisHTML(newPage)
-    };
+  if(window.location.search !== "" && renderFinished === 1){
+    let newPage = window.location.search;
+    let newPageLen = newPage.length;
+    newPage = newPage.slice(1,newPageLen)
+    includeThisHTML(newPage);
   };
-*/
+};
+
+
