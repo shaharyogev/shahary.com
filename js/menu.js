@@ -49,7 +49,8 @@ function screenResize(){
   style.setProperty('--sw', width + 'px');
 };
 screenResize()
-window.addEventListener("resize", screenResize)
+window.addEventListener("resize", screenResize )
+window.addEventListener("resize", postSize)
 
 function themeColors(light, dark) {
   let rootColors = [{
@@ -69,8 +70,6 @@ function themeColors(light, dark) {
   }
 }
 
-
-
 function themeToggle(id) {
   let themeStateText = document.getElementById(id).innerText;
   let logoSrc = document.getElementById("logo");
@@ -87,20 +86,25 @@ function themeToggle(id) {
 }
 document.body.addEventListener("click", menuXX);
 
-function divHeight(firstClass){
 
-  let thisHeight =  firstClass.style.property.height;
+
+function divHeight(firstClass){
+  let thisHeight =  firstClass.offsetHeight;
   let divHeightLeft = deviceScreenHeight - thisHeight;
-  let thisWidth = firstClass.style.property.width;
-  let divWidthLeft = deviceScreenWidth - thisWidth;
-  this.style.setProperty('--cidh' + divHeightLeft + 'px');
-  this.style.setProperty('--cidw' + divWidthLeft + 'px')
+  //let thisWidth = firstClass.offsetWidth;
+  //let divWidthLeft = deviceScreenWidth - thisWidth;
+  let parentClass = firstClass.parentElement;
+  let secondClass = parentClass.children;
+  secondClass[1].style.setProperty('height' ,divHeightLeft + 'px');
+  //secondClass.style.setProperty('width', divWidthLeft + 'px');
 }
 
+
+
 function postSize(){
-  let x = document.getElementsByClassName("card-second-div");
-  for(index in x ){
-    divHeight(x[index]);
+  let x = document.getElementsByClassName("card-header");
+  for (i=0; i < x.length; i++){
+    divHeight(x[i]);
   }
 }
 
@@ -118,7 +122,7 @@ function includeHTML() {
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    if(renderFinished === 3){
+    if(renderFinished == 5){
       postSize();
     }
     /*search for elements with a certain atrribute:*/
@@ -146,6 +150,7 @@ function includeHTML() {
       return;
     }
   }
+  
   renderFinished = 0;
 };
 
