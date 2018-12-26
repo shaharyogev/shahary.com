@@ -3,6 +3,8 @@ let menuClass;
 let renderFinished = 0;
 const style = document.documentElement.style;
 const homePageDynamicContent = '/page/coding-projects.html'
+let deviceScreenHeight
+let deviceScreenWidth
 
 function searchPath(){
   if (window.location.search !== "") {
@@ -35,10 +37,14 @@ function menuXX() {
   };
 }
 
+/*css */
+
 function screenResize(){
   let height = window.innerHeight;
   let width = window.innerWidth;
   console.log(height + width);
+  deviceScreenHeight = height;
+  deviceScreenWidth = width;
   style.setProperty('--sh', height + 'px');
   style.setProperty('--sw', width + 'px');
 };
@@ -81,6 +87,17 @@ function themeToggle(id) {
 }
 document.body.addEventListener("click", menuXX);
 
+function divHeight(){
+  let firstClass = document.getElement
+  let thisHeight =  firstClass.style.property.height;
+  let divHeightLeft = deviceScreenHeight - thisHeight;
+  let thisWidth = firstClass.style.property.width;
+  let divWidthLeft = deviceScreenWidth - thisWidth;
+  style.setProperty('--cidh' + divHeightLeft + 'px');
+  style.setProperty('--cidw' + divWidthLeft + 'px')
+}
+window.onLoad("resize", screenResize)
+
 
 
 function tests() {
@@ -88,7 +105,7 @@ function tests() {
   console.log('renderFinished: ' + renderFinished);
 }
 
-
+/*content*/
 
 function includeHTML() {
   document.getElementById("dynamicContent").addEventListener("load", tests());

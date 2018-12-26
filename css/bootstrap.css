@@ -9,9 +9,14 @@
   --sw: 100%;
   --pba:rgba(255, 255, 255, 0.294);
   --pbb:rgba(167, 86, 243, 0.294);
-
+  --cidh:400px;
+  --cidw:400px;
 }
 
+.card-second-div{
+  height:var(--cidh);
+  width:var(--cidw);
+}
 
 #menuPopUp {
   position: absolute;
