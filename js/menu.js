@@ -87,33 +87,40 @@ function themeToggle(id) {
 }
 document.body.addEventListener("click", menuXX);
 
-function divHeight(){
-  let firstClass = document.getElement
+function divHeight(firstClass){
+
   let thisHeight =  firstClass.style.property.height;
   let divHeightLeft = deviceScreenHeight - thisHeight;
   let thisWidth = firstClass.style.property.width;
   let divWidthLeft = deviceScreenWidth - thisWidth;
-  style.setProperty('--cidh' + divHeightLeft + 'px');
-  style.setProperty('--cidw' + divWidthLeft + 'px')
+  this.style.setProperty('--cidh' + divHeightLeft + 'px');
+  this.style.setProperty('--cidw' + divWidthLeft + 'px')
 }
-window.onLoad("resize", screenResize)
 
+function postSize(){
+  let x = document.getElementsByClassName("card-second-div");
+  for(index in x ){
+    divHeight(x[index]);
+  }
+}
 
-
-function tests() {
-  renderFinished = 1;
+function contentCount() {
+  renderFinished += 1 ;
   console.log('renderFinished: ' + renderFinished);
 }
 
 /*content*/
 
 function includeHTML() {
-  document.getElementById("dynamicContent").addEventListener("load", tests());
+  document.getElementById("dynamicContent").addEventListener("load", contentCount());
   var z, i, elmnt, file, xhttp, response;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
+    if(renderFinished === 3){
+      postSize();
+    }
     /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("include-html");
     if (file) {
@@ -139,6 +146,7 @@ function includeHTML() {
       return;
     }
   }
+  renderFinished = 0;
 };
 
 
