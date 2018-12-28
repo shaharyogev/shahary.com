@@ -42,7 +42,6 @@ function menuXX() {
 function screenResize(){
   let height = window.innerHeight;
   let width = window.innerWidth;
-  console.log(height + width);
   deviceScreenHeight = height;
   deviceScreenWidth = width;
   style.setProperty('--sh', height + 'px');
@@ -73,7 +72,6 @@ function themeColors(light, dark) {
 function themeToggle(id) {
   let themeStateText = document.getElementById(id).innerText;
   let logoSrc = document.getElementById("logo");
-  //console.log(themeStateText)
   if (themeStateText == 'Dark-Side') {
     themeColors('white', 'black');
     document.getElementById(id).innerText = 'Light-Side';
@@ -110,7 +108,6 @@ function postSize(){
 
 function contentCount() {
   renderFinished += 1 ;
-  console.log('renderFinished: ' + renderFinished);
 }
 
 /*content*/
@@ -122,9 +119,7 @@ function includeHTML() {
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    if(renderFinished == 5){
-      postSize();
-    }
+    
     /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("include-html");
     if (file) {
@@ -151,7 +146,11 @@ function includeHTML() {
     }
   }
   
+  if(renderFinished == 5){
+    postSize();
+  }
   renderFinished = 0;
+  
 };
 
 
@@ -184,16 +183,17 @@ function includeThisHTML(page) {
     /*exit the function:*/
     return;
   }
+  
 };
 
 
 
 window.onpopstate = function (event) {
   if (window.location.pathname !== '/') {
-    includeThisHTML(window.location.search)
-    //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    includeThisHTML(window.location.search);
   } else {
-    includeThisHTML(homePageDynamicContent)
+    includeThisHTML(homePageDynamicContent);
+    setTimeout(postSize, 50);
   }
 };
 
