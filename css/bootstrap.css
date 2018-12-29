@@ -119,6 +119,7 @@
   display: flex;
   flex-flow: row ;
   justify-content: center;
+  padding:1vmin 1vmin 1vmin 1vmin;
 }
 
 @media(pointer:none),
@@ -154,7 +155,7 @@
   }
 
   #main-content p {
-    font-size: 3.2vmin;
+    font-size: 3.1vmin;
   }
 
   #main-content a {
@@ -190,7 +191,7 @@
 
 .post-screen-size-a {
   width: 50%;
-  height: var(--sh);
+  height: auto;
   background: var(--pba);
   margin: auto;
 
@@ -208,11 +209,12 @@
 
 .post-screen-size-a a {
   color: var(--tc);
+  cursor:pointer;
 }
 
 .post-screen-size-b {
   width: 50%;
-  height: var(--sh);
+  height: auto;
   background: var(--pba);
   margin: auto;
 }
@@ -227,6 +229,7 @@
 
 .post-screen-size-b a {
   color: var(--tc);
+  cursor:pointer;
 }
 
 .post-screen-size-flow {
@@ -238,10 +241,7 @@
 
 .post-screen-size-flow .card-header {
   background: var(--pbb);
-
 }
-
-
 .post-screen-size-flow .post-technology {
   background: var(--pba);
 }
@@ -250,6 +250,7 @@
   color: var(--tc);
   cursor:pointer;
 }
+
 .post-flow {
   padding:5%;
 }
@@ -286,6 +287,7 @@
   height:100%;
   vertical-align: middle;
 }
+
 
 .post-technology {
   display: block;

@@ -3,8 +3,8 @@ let menuClass;
 let renderFinished = 0;
 const style = document.documentElement.style;
 const homePageDynamicContent = '/page/coding-projects.html'
-let deviceScreenHeight
-let deviceScreenWidth
+let deviceScreenHeight = screen.height;
+let deviceScreenWidth = screen.width;
 
 function searchPath(){
   if (window.location.search !== "") {
@@ -160,7 +160,7 @@ function includeHTML() {
   }
   
   if(renderFinished == 5){
-    //postSize();
+    postSize();
   }
   renderFinished = 0;
   
@@ -202,7 +202,7 @@ function includeThisHTML(page) {
     };
     history.pushState(z, z, pagePath );
     /*exit the function:*/
-    //setTimeout(postSize, 50);
+    setTimeout(postSize, 50);
     return;
   }
   
@@ -215,7 +215,7 @@ window.onpopstate = function (event) {
     includeThisHTML(window.location.search);
   } else {
     includeThisHTML(homePageDynamicContent);
-    //setTimeout(postSize, 50);
+    setTimeout(postSize, 50);
   }
 };
 
