@@ -1,4 +1,3 @@
-<!--section - page contact-->
 <section id="main-content">
   <div class="card post-screen-size-flow justify-content-center  border-0">
     <div class="card-header border-0">
@@ -16,142 +15,138 @@
           👀View librari: React<br>
         </div>
       </a>
-
       <a class=" text-center" href="https://github.com/shaharyogev/getapeek" target="_blank">
         <h5>⌨️Link to the Github page</h5>
       </a>
     </div>
     <div class="card-body mx-auto ">
-
       <span class="post-image-helper"></span>
       <a href="https://github.com/shaharyogev/getapeek" target="_blank">
         <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeekServer.gif?raw=true"></a>
     </div>
-
     <div class="post-flow">
-      <div class="">
+      <h1>Table of contents</h1>
 
-        <h1>Table of contents</h1>
+      <li><a type="link" onclick="scrollToDiv('my-code-editor')"> My code editor</a></li>
+      <li><a onclick="scrollToDiv('installing-nodejs-and-react')"> Installing Nodejs and React</a>
+      </li>
+      <li><a type="link" onclick="scrollToDiv('get-to-the-fun-part')"> Get to the fun part</a></li>
+      <br>
+      <h2 id="my-code-editor"> My code editor</h2>
 
-        <li><a type="link" onclick='return scrollTo("my-code-editor")'> My code editor</a></li>
-        <li><a type="link" onclick='return scrollTo("installing-nodejs-and-react")'> Installing Nodejs and React</a>
-        </li>
-        <li><a type="link" onclick='return scrollTo("get-to-the-fun-part")'> Get to the fun part</a></li>
-        <br>
-        <h2 id="my-code-editor"> My code editor</h2>
-
-        <p>My code editor for the last few months is VS Code (Microsoft) - https://code.visualstudio.com/<br>
-          It is really great, much better for me than Atom or Sublime (that I used in the past). <br>
-          One of its better features is the multiple terminals option that you can start within the code editor itself.
-        </p>
+      <p>My code editor for the last few months is VS Code (Microsoft) - https://code.visualstudio.com/<br>
+        It is really great, much better for me than Atom or Sublime (that I used in the past). <br>
+        One of its better features is the multiple terminals option that you can start within the code editor itself.
+      </p>
 
 
 
-        <p>In this repository folders, you will find the Node.js files and the React files.<br>
-          You will first have to install all the Node.js and React packages on your own.</p>
+      <p>In this repository folders, you will find the Node.js files and the React files.<br>
+        You will first have to install all the Node.js and React packages on your own.</p>
 
-        <h2 id="installing-nodejs-and-react">Installing Nodejs and React</h2>
-        <br>
-        <p>If you don't have Node.js or React on your project folder you can continue with the following steps below,
-          else</p> <a type="link" onclick='return scrollTo("get-to-the-fun-part")'>[Get to the fun part]</a>
-        <br>
-        <p>If you never installed Node.js on your pc go to - https://nodejs.org/en/ download and install it. <br>
+      <h2 id="installing-nodejs-and-react">Installing Nodejs and React</h2>
+      <br>
+      <p>If you don't have Node.js or React on your project folder you can continue with the following steps below,
+        else</p> <a type="link" onclick='scrollTo("get-to-the-fun-part")'>[Get to the fun part]</a>
+      <br>
+      <p>If you never installed Node.js on your pc go to - https://nodejs.org/en/ download and install it. <br>
 
-          In your Terminal ('command prompt' in windows) navigate to the folder that you will install the server and
-          then
-          the project in.</p>
+        In your Terminal ('command prompt' in windows) navigate to the folder that you will install the server and
+        then
+        the project in.</p>
 
-        <p>[cd (folder name or full path) - will go to this folder, cd.. - will go back a folder)</p>
+      <p>[cd (folder name or full path) - will go to this folder, cd.. - will go back a folder)</p>
 
-        <p>Then follow the next few code lines:</p>
+      <p>Then follow the next few code lines:</p>
 
-        <p>first, install the express generator on your pc (great way to install a Node.js server) -</p>
+      <p>first, install the express generator on your pc (great way to install a Node.js server) -</p>
 
-        <br>
-        <pre>   <code>('sudo' if you on Linux) npm install -g express-generator</code></pre>
+      <br>
+      <pre>   <code>('sudo' if you on Linux) npm install -g express-generator</code></pre>
 
-        <p>Make sure that you in the directory that you like to install the server in and write in the console -</p>
+      <p>Make sure that you in the directory that you like to install the server in and write in the console -</p>
 
-        <pre>   <code>express (new folder name)</code></pre>
+      <pre>   <code>express (new folder name)</code></pre>
 
-        <p>install ejs if you like, we will use React so no ejs or any visual js needed -</p>
-        <pre>   <code>express --view=ejs (the newly created folder name)</code>
+      <p>install ejs if you like, we will use React so no ejs or any visual js needed -</p>
+      <pre>   <code>express --view=ejs (the newly created folder name)</code>
         </pre>
 
 
-        <p>Navigate to the server folder itself</p>
+      <p>Navigate to the server folder itself</p>
 
-        <pre>   <code>cd (the newly created folder name)</code></pre>
-        <p>Write ( this will install all the dependencies ):</p>
-
-
-        <pre>   <code>npm install</code></pre>
-        <p>For this project, we need to install async, a great way to control asynchronous functions with ease. For
-          more
-          data - https://caolan.github.io/async/</p>
+      <pre>   <code>cd (the newly created folder name)</code></pre>
+      <p>Write ( this will install all the dependencies ):</p>
 
 
-        <pre>   <code>npm install --save async</code></pre>
-        <p>Add this code to the index.js file in the server routes folder.</p>
+      <pre>   <code>npm install</code></pre>
+      <p>For this project, we need to install async, a great way to control asynchronous functions with ease. For
+        more
+        data - https://caolan.github.io/async/</p>
 
-        <pre>   <code>var async = require('async');</code></pre>
-        <p>To start the server write -</p>
+
+      <pre>   <code>npm install --save async</code></pre>
+      <p>Add this code to the index.js file in the server routes folder.</p>
+
+      <pre>   <code>var async = require('async');</code></pre>
+      <p>To start the server write -</p>
 
 
-        <pre>   <code>npm start</code></pre>
+      <pre>   <code>npm start</code></pre>
 
-        <p>
-          or</p>
-        <pre>   <code>node bin/www</code></pre>
+      <p>or</p>
+      <pre>   <code>node bin/www</code></pre>
 
-        <p>Now you have a Node.js server with express installed and active.</p>
+      <p>Now you have a Node.js server with express installed and active.</p>
 
-        <p>To install React use a very simple way officially from the Facebook react team - </p>
+      <p>To install React use a very simple way officially from the Facebook react team - </p>
 
-        <pre>    <code>sudo npm install create-react-app -g</code>
+      <pre>    <code>sudo npm install create-react-app -g</code>
     <code>create-react-app (A new folder with the project name)</code>
     <code>cd (the newly created folder name)</code>
     <code>npm start</code></pre>
-        <h2 id="get-to-the-fun-part">Get to the fun part</h2>
+      <h2 id="get-to-the-fun-part">Get to the fun part</h2>
 
-        <p>If you have Node.js and React already installed on your machine don't repeat this process and copy the files
-          in that exact order:</p>
+      <p>If you have Node.js and React already installed on your machine don't repeat this process and copy the files
+        in that exact order:</p>
 
-        <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeekFileList.PNG?raw=true">
-        <br>
-        <br>
-        <p>All the files in the node_modules folder for the server will already be present in your project folder after
-          you will npm install. There is no need to put it here, it will be a waste of space for GitHub. </p>
+      <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeekFileList.PNG?raw=true">
+      <br>
+      <br>
+      <p>All the files in the node_modules folder for the server will already be present in your project folder after
+        you will npm install. There is no need to put it here, it will be a waste of space for GitHub. </p>
 
-        <p>Every file that is here in the git is a mast. You can change everything but don't delete the core files, it
-          will break the code they are all conected.</p>
+      <p>Every file that is here in the git is a mast. You can change everything but don't delete the core files, it
+        will break the code they are all conected.</p>
 
-        <p>For you to start the app:<br>
-          npm start the Node.js server and at the same time start the react app
-          with the npm start in the 'pclist-react' folder (you will need two different terminals for that ). </p>
+      <p>For you to start the app:<br>
+        npm start the Node.js server and at the same time start the react app
+        with the npm start in the 'pclist-react' folder (you will need two different terminals for that ). </p>
 
-        <h3>In your browser go to:</h3>
+      <h3>In your browser go to:</h3>
 
-        <p>http://localhost:3000/ - to view the app.</p>
+      <p>http://localhost:3000/ - to view the app.</p>
 
-        <p>http://localhost:8000/ - to see that your Node.js server is running well. </p>
+      <p>http://localhost:8000/ - to see that your Node.js server is running well. </p>
 
-        <p>(You will find a pleasant surprise there that will help you troubleshoot problems).</p>
-        <br>
+      <p>(You will find a pleasant surprise there that will help you troubleshoot problems).</p>
+      <br>
 
-        <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/PcListDataJS.PNG?raw=true">
-        <br>
-        <br>
-        <p>
-          In the PcListData.js component you will find comments that explain what every function is doing,
-          but in the jsx section, you will have to figure it out on your own, it's not that complicated. </p>
-        <br>
-        <p>The PcListData.css is where you control over the colors of the app include the body. The Dark theme is my
-          favorite and I made it because I believe every app need a mode like that to better protect our eyes for the
-          future. </p>
-        <br>
-        <p>In the index.js file on the server routes folder, you will find all the behind the scenes magic.</p>
-      </div>
+      <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/PcListDataJS.PNG?raw=true">
+      <br>
+      <br>
+      <p>
+        In the PcListData.js component you will find comments that explain what every function is doing,
+        but in the jsx section, you will have to figure it out on your own, it's not that complicated. </p>
+      <br>
+      <p>The PcListData.css is where you control over the colors of the app include the body. The Dark theme is my
+        favorite and I made it because I believe every app need a mode like that to better protect our eyes for the
+        future. </p>
+      <br>
+      <p>In the index.js file on the server routes folder, you will find all the behind the scenes magic.</p>
+      <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeek.gif?raw=true">
+
+
     </div>
   </div>
 </section>

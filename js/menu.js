@@ -110,9 +110,12 @@ function contentCount() {
   renderFinished += 1 ;
 }
 
-function scrollTo(id){
-let elmnt = document.getElementById(id);
-elmnt.scrollIntoView()
+function scrollToDiv(linkId){
+let linkS = document.getElementById(linkId)
+function go(){
+  linkS.scrollIntoView()
+}
+setTimeout(go ,150)
 }
 
 function scrollToContactMe(){
@@ -144,8 +147,8 @@ function includeHTML() {
             elmnt.innerHTML = this.responseText;
           }
           if (this.status == 404) {
-            elmnt.innerHTML = "Page not found."; //DEV
-            //includeThisHTML(homePageDynamicContent)//PRODUCTION
+            //elmnt.innerHTML = "Page not found."; //DEV
+            includeThisHTML(homePageDynamicContent)//PRODUCTION
           }
           /*remove the attribute, and call this function once more:*/
           elmnt.removeAttribute("include-html");
@@ -189,8 +192,8 @@ function includeThisHTML(page) {
           elmnt.innerHTML = this.responseText;
         }
         if (this.status == 404) {
-          elmnt.innerHTML = "Page not found."; //DEV
-          //includeThisHTML(homePageDynamicContent)//PRODUCTION
+          //elmnt.innerHTML = "Page not found."; //DEV
+          includeThisHTML(homePageDynamicContent)//PRODUCTION
         }
         /*remove the attribute, and call this function once more:*/
       }
@@ -216,6 +219,7 @@ window.onpopstate = function (event) {
   } else {
     includeThisHTML(homePageDynamicContent);
     setTimeout(postSize, 50);
+    galleryIsOnIO = 0;
   }
 };
 
@@ -234,3 +238,4 @@ window.onload = function (event) {
 function reloadFromServer() {
   location.reload(true);
 }
+

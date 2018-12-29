@@ -1,0 +1,75 @@
+<section id="main-content">
+  <div class="card post-screen-size-flow justify-content-center  border-0">
+    <div class="card-header border-0">
+
+
+      <h1 class="card-title">Welcome to my javaScript gallery</h1>
+      <h5 class="card-subtitle">This is an open source project you can do whatever you like with it.</h5>
+
+      <p class="card-text">Hi, this is my new gallery.<br>
+        This is a simple but efficient gallery with smartphone touch swipe left and swipe right navigation.<br>
+        <br>
+      </p>
+      <a href="https://github.com/shaharyogev/javascript_gallery" target="_blank">
+        <div class="post-technology">
+          👨🏾‍💻Code editor:<br>
+          Atom + live server<br>
+          🖥File system: Dropbox<br>
+        </div>
+      </a>
+      <br>
+      <h5 class="text-center">Hop you like it 💪😉</h5>
+      <br>
+    </div>
+    <div class="card-body">
+
+
+      <div class="galleryJs">
+        <div class="mainPhoto row">
+          <img id="mainPhoto" class="pMain" src="/page/gallery/photos/1.jpg" onload='galleryIsOn()'>
+          <div class="clearBoxNext" onclick="nextImage(0)"></div>
+          <div class="arrowNext " id="overNext" onclick="nextImage(0)"></div>
+          <!-- The clearBox is for the convenient of the user, it makes the click space much bigger-->
+          <div class="clearBoxBack" onclick="backImage()"></div>
+          <div class="arrowBack" id="overBack" onclick="backImage()"></div>
+          <div id="circleStrip" class="row">
+            <div id="circle" class="circle cl0"></div>
+          </div>
+        </div>
+        <!--The viewable section -->
+        <div id="phtosStrip" class="photosStrip row">
+          <div id="clearBoxNextStrip" onclick="nextImage(0)">
+            <div class="stripNext" id="stripNext" onclick="nextImage(0)"></div>
+          </div>
+          <div id="clearBoxBackStrip" onclick="backImage()">
+            <div class=" stripBack" id="stripBack" onclick="backImage()"></div>
+          </div>
+          <img id="p1" class="p1 horizontalPhotos" src="/page/gallery/photos/1.jpg" onclick="" data-photoid="p1">
+          <img id="p2" class="p2 horizontalPhotos" src="/page/gallery/photos/2.jpg" onclick="nextImage(0)" data-photoid="p2">
+          <img id="p3" class="p3 horizontalPhotos" src="/page/gallery/photos/3.jpg" onclick="nextImage(1)" data-photoid="p3">
+          <img id="p4" class="p4 horizontalPhotos" src="/page/gallery/photos/4.jpg" onclick="nextImage(2)" data-photoid="p4">
+          <img id="p5" class="p5 horizontalPhotos" src="/page/gallery/photos/5.jpg" onclick="nextImage(3)" data-photoid="p5">
+        </div>
+      </div>
+      <div id="swipeText">
+        <p class="text">Swipe right or left.</p>
+      </div>
+      <a class=" text-center" href="https://github.com/shaharyogev/javascript_gallery" target="_blank">
+        <h5>⌨️Link to the Github page</h5>
+      </a>
+
+    </div>
+  </div>
+  <div class="post-flow">
+
+    <p class="card-text"> The code itself is very well documented so you can read all the comments and follow along.</p>
+
+    <img src="/page/gallery/files_in_the_folder.png" class="post-image">
+    <br>
+    <br>
+    <p class="card-text"> The js file and the CSS file are linked, so if you copy the code to your own project check
+      for duplicate names.</p>
+    <br>
+    <img src="/page/gallery/CodeExample.png" class="post-image">
+  </div>
+</section>
