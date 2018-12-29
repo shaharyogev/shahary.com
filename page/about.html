@@ -1,0 +1,100 @@
+<section id="main-content">
+  <div class="card post-screen-size-flow justify-content-center  border-0 ">
+    <div class="card-header border-0">
+      <h1 class="card-title"> Hi, how are you?</h1>
+      <h3 class="card-subtitle">Can I tell you a littel bit about myself?</h3>
+      <p class="card-text"><big>"In</big> a world where every second count I create growth hacking for companies
+        Focusing on mobile and video marketing strategies. Achieving the best
+        possible ROI by acknowledge consumer behavior on social platforms and creating smart interaction with their
+        social life and spare time on the web."<small> Shahar Yogev</small></br>
+      </p>
+      <div class="post-technology">
+        <p class="card-text">
+          👨🏻‍💻Coding: Self-Taught<br>
+          👨🏻‍🎓Degrees: M.B.A Strategy and Entrepreneurship + B.A Marketing <br>
+          The College of Management Academic Studies
+        </p>
+      </div>
+
+      <h5 class="text-center">Contact me or follow:</h5>
+
+      <div class="card-img">
+        <a href="https://linkedin.com/in/shahar-yogev-97875286" target="_blank"><img class="mx-auto sicon" src="../files/image/linkedin.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://www.facebook.com/shaharyogev" target="_blank"><img class="mx-auto sicon" src="../files/image/facebook.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://www.twitter.com/shaharyogev" target="_blank"><img class="mx-auto sicon" src="../files/image/twitter.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://plus.google.com/+ShaharYogev/posts" target="_blank"><img class="mx-auto sicon" src="../files/image/googleplus.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://www.youtube.com/c/shaharyogev" target="_blank"><img class="mx-auto sicon" src="../files/image/youtube.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://www.pinterest.com/shaharyogev" target="_blank"><img class="mx-auto sicon" src="../files/image/pintrast.png"
+            max-width="40px" max-height="40px"></a>
+        <a href="https://instagram.com/shaharyogev" target="_blank"><img class="mx-auto sicon" src="../files/image/instagram.png"
+            max-width="40px" max-height="40px"></a>
+      </div>
+    </div>
+    <div class="card-body mx-auto">
+      <span class="post-image-helper"></span>
+      <img class="post-image " src="/files/image/aboutbg.jpg">
+    </div>
+
+    <div class="post-flow">
+      <div id="contact_me">
+        <div class="container">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="full_name" name="full_name">Contact me if you like :)</label>
+              <input type="full_name" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <input type="phone_number" name="phone_number" class="form-control" id="phone_number" aria-describedby="emailHelp"
+                placeholder="Phone Number">
+              <small id="phone_number" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="email" class="form-text text-muted">I'll never share your info with anyone else.</small>
+            </div>
+            <div>
+              <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../js/jquery.serialize-object.js"></script>
+<script>
+  $(document).ready(function () {
+    $.fn.serializeObject = function () {
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function () {
+        if (o[this.name]) {
+          if (!o[this.name].push) {
+            o[this.name] = [o[this.name]];
+          }
+          o[this.name].push(this.value || '');
+        } else {
+          o[this.name] = this.value || '';
+        }
+      });
+      return o;
+    };
+    var form = $('form#contact-form'),
+      url = 'https://script.google.com/macros/s/AKfycbzlYpYZEFCuxD8gwTwM0w-hgO5XRmBwosoMbvHuEzDG3ZhlvYrW/exec';
+    form.submit(function (e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: form.serializeObject()
+      }).success();
+    })
+  });
+</script>

@@ -3,25 +3,29 @@
   <div class="card post-screen-size-flow justify-content-center  border-0">
     <div class="card-header border-0">
       <h1 class="card-title">Get A Peek</h1>
-      <h5 class="card-text"> October 27, 2018 | Shahar Yogev</h5>
+      <h5 class="card-subtitle"> October 27, 2018 | Shahar Yogev</h5>
       <p class="card-text">The simplest visual explorer for your pc or server,<br>
         based on Node.js and React package for the best in-app visual effect with ease.<br>
         This project is my first React app. The app won't do much if you want to control the files,<br>
         but it will give you a great base for adding your one components and functionality.<br>
       </p>
-      <a href="../page/projects/getapeek.html">
+      <a onclick="includeThisHTML('/page/projects/getapeekc.html')">
         <div class="post-technology">
           👨🏾‍💻Code editor: VScode<br>
           🖥File system: Node.js<br>
           👀View librari: React<br>
         </div>
       </a>
-    </div>
-    <div class="card-body mx-auto ">
+
       <a class=" text-center" href="https://github.com/shaharyogev/getapeek" target="_blank">
         <h5>⌨️Link to the Github page</h5>
       </a>
-      <a href="https://github.com/shaharyogev/getapeek" target="_blank"><img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeekServer.gif?raw=true"></a>
+    </div>
+    <div class="card-body mx-auto ">
+
+      <span class="post-image-helper"></span>
+      <a href="https://github.com/shaharyogev/getapeek" target="_blank">
+        <img class="post-image" src="https://github.com/shaharyogev/getapeek/blob/master/GetAPeekServer.gif?raw=true"></a>
     </div>
 
     <div class="post-flow">
@@ -29,9 +33,10 @@
 
         <h1>Table of contents</h1>
 
-        <li><a type="link" onclick='return scollTo("my-code-editor")'> My code editor</a></li>
-        <li><a type="link" onclick='return scollTo("installing-nodejs-and-react")'> Installing Nodejs and React</a> </li>
-        <li><a type="link" onclick='return scollTo("get-to-the-fun-part")'> Get to the fun part</a></li>
+        <li><a type="link" onclick='return scrollTo("my-code-editor")'> My code editor</a></li>
+        <li><a type="link" onclick='return scrollTo("installing-nodejs-and-react")'> Installing Nodejs and React</a>
+        </li>
+        <li><a type="link" onclick='return scrollTo("get-to-the-fun-part")'> Get to the fun part</a></li>
         <br>
         <h2 id="my-code-editor"> My code editor</h2>
 
@@ -48,7 +53,7 @@
         <h2 id="installing-nodejs-and-react">Installing Nodejs and React</h2>
         <br>
         <p>If you don't have Node.js or React on your project folder you can continue with the following steps below,
-          else</p> <a type="link" onclick='return scollTo("get-to-the-fun-part")'>[Get to the fun part]</a>
+          else</p> <a type="link" onclick='return scrollTo("get-to-the-fun-part")'>[Get to the fun part]</a>
         <br>
         <p>If you never installed Node.js on your pc go to - https://nodejs.org/en/ download and install it. <br>
 
@@ -148,4 +153,5 @@
         <p>In the index.js file on the server routes folder, you will find all the behind the scenes magic.</p>
       </div>
     </div>
+  </div>
 </section>

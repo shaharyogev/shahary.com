@@ -110,9 +110,16 @@ function contentCount() {
   renderFinished += 1 ;
 }
 
-function scollTo(id){
+function scrollTo(id){
 let elmnt = document.getElementById(id);
 elmnt.scrollIntoView()
+}
+
+function scrollToContactMe(){
+  function go(){
+    document.getElementById('contact_me').scrollIntoView()
+  }
+  setTimeout(go ,150)
 }
 
 
@@ -153,7 +160,7 @@ function includeHTML() {
   }
   
   if(renderFinished == 5){
-    postSize();
+    //postSize();
   }
   renderFinished = 0;
   
@@ -164,12 +171,14 @@ function includeHTML() {
 function includeThisHTML(page) {
   var z, pagePath, elmnt, file, xhttp;
   elmnt = document.getElementById("dynamicContent");
-  if(page === 'home')
-    file = homePageDynamicContent,
-    pagePath = '';
-  else
-    file = page,
+  if(page === 'home'){
+    file = homePageDynamicContent;
+    pagePath = '/';
+  }
+  else{
+    file = page;
     pagePath = '?' + file;
+  }
 
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
@@ -193,7 +202,7 @@ function includeThisHTML(page) {
     };
     history.pushState(z, z, pagePath );
     /*exit the function:*/
-    setTimeout(postSize, 50);
+    //setTimeout(postSize, 50);
     return;
   }
   
@@ -206,7 +215,7 @@ window.onpopstate = function (event) {
     includeThisHTML(window.location.search);
   } else {
     includeThisHTML(homePageDynamicContent);
-    setTimeout(postSize, 50);
+    //setTimeout(postSize, 50);
   }
 };
 
