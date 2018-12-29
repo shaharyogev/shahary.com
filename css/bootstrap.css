@@ -8,7 +8,7 @@
   /*--tc: white;
   --tb: black;
   --te: white;*/
-  --sh: 736px;
+  --sh: 750px;
   --sw: 100%;
   --pba: rgba(37, 245, 234, 0.294);
   --pbb: rgba(167, 86, 243, 0.294);
@@ -26,6 +26,8 @@
   right: 100%;
   bottom: 100%;
   border-radius: 10px;
+  z-index:2;
+  
 }
 
 .manuBox1,
@@ -34,7 +36,6 @@
 .manuBox4,
 .manuBox5 {
   display: none;
-  z-index: 1;
   width: 130px;
   padding: 10px;
   background-color: rgba(96, 245, 245, 0.794);
@@ -58,6 +59,8 @@
 .change .manuBox4,
 .change .manuBox5 {
   display: block;
+
+
 }
 
 .menuButtonText {
@@ -105,6 +108,10 @@
 
 #main-content .card {
   background: var(--tb);
+}
+
+#main-content .card-body {
+  flex:none;
 }
 
 @media(pointer:none),
@@ -220,9 +227,6 @@
   margin: auto;
 }
 
-.post-screen-size-flow .card-body{
-
-}
 .post-screen-size-flow .card-header {
   background: var(--pbb);
 
@@ -235,6 +239,7 @@
 
 .post-screen-size-flow a {
   color: var(--tc);
+  cursor:pointer;
 }
 .post-flow {
   padding:5%;

@@ -110,6 +110,12 @@ function contentCount() {
   renderFinished += 1 ;
 }
 
+function scollTo(id){
+let elmnt = document.getElementById(id);
+elmnt.scrollIntoView()
+}
+
+
 /*content*/
 
 function includeHTML() {
@@ -156,9 +162,15 @@ function includeHTML() {
 
 
 function includeThisHTML(page) {
-  var z, i, elmnt, file, xhttp;
+  var z, pagePath, elmnt, file, xhttp;
   elmnt = document.getElementById("dynamicContent");
-  file = page;
+  if(page === 'home')
+    file = homePageDynamicContent,
+    pagePath = '';
+  else
+    file = page,
+    pagePath = '?' + file;
+
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
     xhttp = new XMLHttpRequest();
@@ -179,8 +191,9 @@ function includeThisHTML(page) {
     z = {
       shahary: page
     };
-    history.pushState(z, '?' + page, '?' + page);
+    history.pushState(z, z, pagePath );
     /*exit the function:*/
+    setTimeout(postSize, 50);
     return;
   }
   
