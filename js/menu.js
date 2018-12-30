@@ -46,10 +46,11 @@ function screenResize(){
   deviceScreenWidth = width;
   style.setProperty('--sh', height + 'px');
   style.setProperty('--sw', width + 'px');
+  //postSize();
 };
 screenResize()
 window.addEventListener("resize", screenResize )
-window.addEventListener("resize", postSize)
+//window.addEventListener("resize", postSize)
 
 function themeColors(light, dark) {
   let rootColors = [{
@@ -237,5 +238,20 @@ window.onload = function (event) {
 
 function reloadFromServer() {
   location.reload(true);
+}
+
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  }
+  else {
+    cancelFullScreen.call(doc);
+  }
 }
 

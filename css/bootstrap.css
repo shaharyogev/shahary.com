@@ -189,6 +189,14 @@
   .post-screen-size-b .card-header {
     order: 1;
   }
+
+  .mainPhoto.mainPhoto{
+    height:80vh;
+  }
+
+  .photosStrip.photosStrip {
+    display: none;
+  }
 }
 
 
@@ -276,7 +284,9 @@
 
 
 .box-size {
-  height: 40vh;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background: var(--pbb);
 }
 
 .post-image {
@@ -815,13 +825,19 @@ hover #typed {
   margin: 0 10%;
 }
 
+.galleryJ{
+  max-height:100%;
+  display:block;
+
+}
+
 @media(max-width: 576px) {
   .galleryJs {
     margin: 0;
   }
 }
 
-.mainPhoto.mainPhoto {
+.mainPhoto {
   position: relative;
   height: 35vw;
   width: relative;
@@ -832,6 +848,9 @@ hover #typed {
   margin-bottom: 1vw;
   transition: 1s ease;
 }
+
+
+
 
 .pMain {
   max-width: 80%;
@@ -1138,7 +1157,7 @@ hover #typed {
 }
 
 @media (max-width:500px) {
-  .mainPhoto.maonPhoto {
+  .mainPhoto {
     height: 65vw;
   }
 
@@ -1168,7 +1187,7 @@ hover #typed {
 }
 
 @media (max-width: 1000px) {
-  .mainPhoto.mainPhoto {
+  .mainPhoto {
     height: 65vw;
   }
 
