@@ -353,6 +353,7 @@ code {
   align-items: center;
   justify-content: center;
   padding: 2% 0;
+  cursor:pointer;
 }
 
 #logo {
@@ -366,6 +367,15 @@ box2,
 box3,
 box4 {
   grid-column: 2/3;
+  cursor:pointer;
+  
+}
+.box1,
+.box2,
+.box3,
+.box4 {
+  cursor:pointer;
+  
 }
 
 /* ce is for the logos in the header*/
