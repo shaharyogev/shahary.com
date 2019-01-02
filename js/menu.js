@@ -76,11 +76,11 @@ function themeToggle(id) {
   if (themeStateText == 'Dark-Side') {
     themeColors('white', 'black');
     document.getElementById(id).innerText = 'Light-Side';
-    logoSrc.src = "../files/image/shahar_yogev_logo2.png";
+    logoSrc.src = "../files/image/shahar_yogev_logo2.svg";
   } else {
     themeColors('black', 'white');
     document.getElementById(id).innerText = 'Dark-Side';
-    logoSrc.src = "../files/image/shahar_yogev_logo1.png";
+    logoSrc.src = "../files/image/shahar_yogev_logo1.svg";
   }
 }
 document.body.addEventListener("click", menuXX);
