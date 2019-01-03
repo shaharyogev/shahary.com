@@ -15,6 +15,9 @@
   --cidh: 400px;
   --cidw: 400px;
 }
+body{
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
 
 .card-second-div {
   height: var(--cidh);
@@ -36,21 +39,43 @@
 .manuBox4,
 .manuBox5 {
   display: none;
-  width: 130px;
+  width: 150px;
   padding: 10px;
-  background-color: rgba(96, 245, 245, 0.794);
+  background-color: rgba(206, 245, 245, 0.794);
   text-align: center;
   margin: auto;
-  border-bottom: 2px solid var(--tc);
+  box-shadow: 0 0 16px rgba(0,0,0,.28);
+  transition: opacity 0.2s ease-in-out;
+  opacity:1;
+  font-weight:600;
+  text-shadow: 0 1px 2px rgba(0,0,0,.28);
 }
 
 .manuBox1 {
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 2px 2px;
+  margin-right:25px;
+
 }
 
+.manuBox2 {
+  margin-left:5px;
+  border-radius: 2px 2px 2px 2px;
+}
+
+.manuBox3 {
+  border-radius: 2px 2px 2px 2px;
+}
+
+.manuBox4 {
+  margin-left:20px;
+  border-radius: 2px 2px 2px 2px;
+
+}
 .manuBox5 {
-  border-radius: 0 0 6px 6px;
+  border-radius: 2px 2px 6px 6px;
   border-bottom: 0px solid var(--tc);
+  margin-left:25px;
+  
 }
 
 .change .manuBox1,
@@ -59,13 +84,24 @@
 .change .manuBox4,
 .change .manuBox5 {
   display: block;
+ 
+  
+}
 
+.manuBox1:hover,
+.manuBox2:hover,
+.manuBox3:hover,
+.manuBox4:hover,
+.manuBox5:hover{
+  opacity: 0.75;
+  background-color: rgba(177, 158, 248, 0.794);
 
 }
 
 .menuButtonText {
   color: var(--tc);
   text-decoration: none;
+  -webkit-appearance:none !important;
 }
 
 #menuLogo {
@@ -76,11 +112,14 @@
   border-radius: 30%;
   padding: 9px 12px 3px 12px;
   z-index:10;
+  
 }
 
 .menuContainer {
   display: inline-block;
   cursor: pointer;
+  
+  
 }
 
 .menuBar1,
@@ -91,6 +130,8 @@
   background-color: var(--tc);
   margin: 6px 0;
   transition: 0.4s;
+  -webkit-filter: invert(50%);
+  filter: invert(50%);
 }
 
 .change .menuBar1 {
@@ -123,6 +164,7 @@
   flex-flow: row;
   justify-content: center;
   padding: 1vmin 1vmin 1vmin 1vmin;
+  
 }
 
 @media(pointer:none),
@@ -165,7 +207,9 @@
     font-size: 3.2vmin;
   }
   
-
+  .technologies-logos-strip{
+    flex-flow:2 row;
+  }
 }
 
 
@@ -280,11 +324,7 @@
 .technologies-logos-strip img{
   max-width:10%;
   height:100%;  
-  
   object-fit:scale-down;
-    
-
-
 }
 
 
@@ -315,6 +355,9 @@
   max-height: 94%;
   vertical-align: middle;
   
+}
+.shadow-0 {
+  box-shadow: 0 0 0 !important;
 }
 
 .post-image-helper {
