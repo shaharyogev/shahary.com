@@ -46,7 +46,7 @@
     <div class="post-flow">
       <div id="contact_me">
         <div class="container">
-          <form id="contact-form">
+          <form id="contact-form" >
             <div class="form-group">
               <label for="full_name" name="full_name">Contact me if you like :)</label>
               <input type="full_name" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
@@ -61,7 +61,7 @@
               <small id="email" class="form-text text-muted">I'll never share your info with anyone else.</small>
             </div>
             <div>
-              <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+							<button name="submitForm" type="submit" id="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
@@ -70,7 +70,7 @@
   </div>
 </section>
 
-<script src="../js/jquery.serialize-object.js"></script>
+
 <script>
   $(document).ready(function () {
     $.fn.serializeObject = function () {
@@ -88,8 +88,7 @@
       });
       return o;
     };
-    var form = $('form#contact-form'),
-      url = 'https://script.google.com/macros/s/AKfycbzlYpYZEFCuxD8gwTwM0w-hgO5XRmBwosoMbvHuEzDG3ZhlvYrW/exec';
+    var form = $('form#contact-form'), url = 'https://script.google.com/macros/s/AKfycbzlYpYZEFCuxD8gwTwM0w-hgO5XRmBwosoMbvHuEzDG3ZhlvYrW/exec';
     form.submit(function (e) {
       e.preventDefault();
       var jqxhr = $.ajax({
