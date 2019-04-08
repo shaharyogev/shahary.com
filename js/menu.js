@@ -256,11 +256,22 @@ function toggleFullScreen() {
 }
 
 var submitClick = document.getElementById('submit');
+var contactFromId = document.getElementById('contact-form');
+
 submitClick.onClick = function(){
-sendInfo()
+sendInfo(contactFromId)
 };
 
-function sendInfo(nameTest, phoneTest, emailTest){
+function sendInfo(id){
+
+  event.preventDefault();
+	let formId = id;
+	let formDataNode = formId.querySelectorAll('input');
+	let formAction = formId.action;
+	let nameTest = formId.querySelector('input[name="name"]');
+	let emailTest = formId.querySelector('input[name="email"]');
+	let phoneTest = formId.querySelector('input[name="phone"]');
+	let test = 0;
   
   if (emailTest != undefined) {
 		let re =
