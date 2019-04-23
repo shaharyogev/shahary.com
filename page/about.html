@@ -54,7 +54,7 @@
           placeholder="Phone Number">
           <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
           <small>I'll never share your info with anyone else.</small>
-          <button name="submitForm" type="submit" id="submitContactForm" class="btn btn-primary">Submit</button>
+          <button name="submitForm" type="submit" id="submitContactForm" class="btn btn-primary" onclick="sendInfo()" >Submit</button>
 
 
 
@@ -109,32 +109,5 @@
 </section>
 
 
-<script>
-  $(document).ready(function () {
-    $.fn.serializeObject = function () {
-      var o = {};
-      var a = this.serializeArray();
-      $.each(a, function () {
-        if (o[this.name]) {
-          if (!o[this.name].push) {
-            o[this.name] = [o[this.name]];
-          }
-          o[this.name].push(this.value || '');
-        } else {
-          o[this.name] = this.value || '';
-        }
-      });
-      return o;
-    };
-    var form = $('form#contact-form'), url = 'https://script.google.com/macros/s/AKfycbzlYpYZEFCuxD8gwTwM0w-hgO5XRmBwosoMbvHuEzDG3ZhlvYrW/exec';
-    form.submit(function (e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: form.serializeObject()
-      }).success();
-    })
-  });
-</script>
+
+<script src="/js/global.js"></script>

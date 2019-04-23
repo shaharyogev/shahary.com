@@ -259,20 +259,26 @@ function toggleFullScreen() {
 
 //need to fix the timing ------------------------------------------------------
 
+window.onload = function() {
+  
+  globalVariables ();
+};
+  
 
-var submitClick = document.getElementById('submitContactForm');
-var contactFromId = document.getElementById('contact-form');
+/*
 
 submitClick.onsubmit = function(){
   event.preventDefault();	
+
   sendInfo(contactFromId);
 };
-
+*/
 
 // send the info to url and validate the info before sending
-function sendInfo(formId){
+function sendInfo(){
+  event.preventDefault();
 
-  //event.preventDefault();
+  const formId = document.getElementById('contact_me');
 	//let formId = id;
 	let formDataNode = formId.querySelectorAll('input');
 	let formAction = formId.action;
