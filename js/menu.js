@@ -6,6 +6,7 @@ const homePageDynamicContent = '/page/coding-projects.html'
 let deviceScreenHeight = screen.height;
 let deviceScreenWidth = screen.width;
 
+
 function searchPath(){
   if (window.location.search !== "") {
     let newPage = window.location.search;
@@ -255,22 +256,30 @@ function toggleFullScreen() {
   }
 }
 
-var submitClick = document.getElementById('submit');
+
+//need to fix the timing ------------------------------------------------------
+
+
+var submitClick = document.getElementById('submitContactForm');
 var contactFromId = document.getElementById('contact-form');
 
-submitClick.onClick = function(){
-sendInfo(contactFromId)
+submitClick.onsubmit = function(){
+  event.preventDefault();	
+  sendInfo(contactFromId);
 };
 
-function sendInfo(id){
 
-  event.preventDefault();
-	let formId = id;
+// send the info to url and validate the info before sending
+function sendInfo(formId){
+
+  //event.preventDefault();
+	//let formId = id;
 	let formDataNode = formId.querySelectorAll('input');
 	let formAction = formId.action;
 	let nameTest = formId.querySelector('input[name="name"]');
 	let emailTest = formId.querySelector('input[name="email"]');
-	let phoneTest = formId.querySelector('input[name="phone"]');
+  let phoneTest = formId.querySelector('input[name="phone"]');
+  let formError = formId.getElementById('contactFormError');
 	let test = 0;
   
   if (emailTest != undefined) {
@@ -286,7 +295,7 @@ function sendInfo(id){
 	if (nameTest != undefined) {
 		let re =
 			/^[\W \D \S ]{3,100}$/;
-		let res = re.test(String(nameTest.value));
+		let res = re.test(String(nameTest.value));  
 		if (!res) {
 			formId.querySelector('.error').innerHTML =
 				'The customer name must be at least 3 character long ';
@@ -305,7 +314,12 @@ function sendInfo(id){
 		}
 	}
 
-
+  if (test > 0) {
+		test = 0;
+		return false;
+	} else {
+		postForm(formAction, formDataNode, id, nextNum);
+	}
 
 }
 

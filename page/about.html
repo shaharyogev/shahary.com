@@ -45,6 +45,22 @@
 
     <div class="post-flow">
       <div id="contact_me">
+
+
+        <form id="contact-form" class="form-group">
+          <label for="full_name" name="full_name">Contact me if you like :)</label>
+          <input type="full_name" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
+          <input type="phone_number" name="phone_number" class="form-control" id="phone_number" aria-describedby="emailHelp"
+          placeholder="Phone Number">
+          <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small>I'll never share your info with anyone else.</small>
+          <button name="submitForm" type="submit" id="submitContactForm" class="btn btn-primary">Submit</button>
+
+
+
+<!--
+
+
         <div class="container">
           <form id="contact-form" >
             <div class="form-group">
@@ -63,6 +79,28 @@
             <div>
 							<button name="submitForm" type="submit" id="submit" class="btn btn-primary">Submit</button>
             </div>
+
+            <form id='addUser' method='post' action='/adduser'>
+              <input id='invite' type='password' placeholder='Invite Code' name='invite' autocomplete="off" required>
+              <input id='userName' type='text' placeholder='User name' name='name' autocomplete="name" required>
+              <input id='newUserEmail' type='email' placeholder='Valid email' name='email' autocomplete="email" required>
+              <input id='newUserPassword' type='password' placeholder='Strong Password' name='password' autocomplete="new-password" required>
+              <div class='stripBox'>
+                <button class='loginButton' id='submitNewUser' type='submit'> Submit</button>
+                <a id='tabToggle2' type='button'  class='newUserButton'>Registered User</a>
+              </div>
+            </form>
+
+-->
+
+
+
+
+            <span id='error' class='error'>
+              <span class='errorName'></span>
+              <span class='errorEmail'></span>
+              <span class='errorPassword'></span>
+            </span>
           </form>
         </div>
       </div>
